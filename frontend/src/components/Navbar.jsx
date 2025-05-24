@@ -25,7 +25,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            {user && (
+            {user ? (
               <>
                 <Link to={"/profile"} className={`btn btn-sm gap-2`}>
                   <User className="size-5" />
@@ -36,6 +36,17 @@ const Navbar = () => {
                   <LogOut className="size-5" />
                   <span className="hidden sm:inline">Logout</span>
                 </button>
+              </>
+            ) : (
+              <>
+                <Link to={"/login"} className={`btn btn-sm gap-2`}>
+                  <User className="size-5" />
+                  <span className="hidden sm:inline">login</span>
+                </Link>
+                <Link to={"/signup"} className={`btn btn-sm gap-2`}>
+                  <User className="size-5" />
+                  <span className="hidden sm:inline">signup</span>
+                </Link>
               </>
             )}
           </div>
